@@ -1,0 +1,381 @@
+body{
+    margin: 0;
+    background: url("./img-show/bg.jpg") no-repeat 0 54px;
+}
+
+ul{
+    margin: 0;
+    /* 去掉点 */
+    list-style: none;
+    padding: 0;
+}
+
+.title{
+    position: relative;
+}
+
+
+/* 游戏全目录 */
+/* nth-child: 规定属于其父元素的第n个子元素*/
+/* 游戏全目录前面的三横 */
+.title li span:nth-child(1){
+    /* 与 display: inline 相比，主要区别在于 display: inline-block 允许在元素上设置宽度和高度。 */
+    display: inline-block;
+    margin-right: 10px;
+    width: 23px;
+    height: 1px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    background-color: white;
+    padding: 5px 0;
+    background-clip: content-box;
+    /* 把此元素放置在父元素的中部。 */
+    vertical-align: middle;
+}
+
+.title li span:nth-child(2){
+    color: white;
+    vertical-align: middle;
+}
+
+.title li:nth-child(1){
+    padding: 18px 40px;
+    width: 100px;
+    background-color: crimson;
+    font-size: 12px;
+}
+
+.title li:nth-child(2){
+    /* 绝对定位 网易游戏相对于整个页面居中 */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 3px;
+    width: 134px;
+    /* 填充规则
+    (1) 如果一侧定值，一侧auto，则auto为剩余空间大小
+    (2) 如果两侧均是auto，则平分剩余空间 
+    https://www.cnblogs.com/raind/p/10726591.html */
+    margin: auto;
+}
+/* 领取网易严选宝箱 */
+.title li:nth-child(3) a{
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-decoration: none;
+    font-size: 12px;
+    color: black;
+    width: 96px;
+    border-left: 1px solid darkgray;
+    padding: 18px 30px;
+}
+
+/* 选择鼠标指针浮动在其上的元素，并设置其样式 */
+.title li:nth-child(3) a:hover{
+    border-bottom: 1px solid darkgray;
+    background-color: whitesmoke;
+}
+/* 设置展开 */
+.menu{
+    width: 100%;
+    height: 0px;
+    background-color: white;
+    /* 不透明级别 */
+    opacity: .9;
+    /* 让过渡效果持续 1 秒 */
+    transition-duration: 1s;
+}
+
+.title li:nth-child(1):hover ~ .menu{
+    height: 500px;
+}
+
+/* 头部下可点击栏 */
+.title li:nth-child(5){
+    position: absolute;
+    left: 30px;
+    top: 82px;
+    z-index: -1;
+}
+.title li:nth-child(6){
+    position: absolute;
+    right: 30px;
+    top: 82px;
+    z-index: -1;
+}
+
+.title li:nth-child(6):hover{
+    filter: brightness(.75);
+}
+
+.title li:nth-child(7){
+    position: fixed;
+    width: 203px;
+    height: 461px;
+    margin: auto;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: -1;
+    background: url("./img-show/dl_bg_44fc686.png") no-repeat;
+}
+
+.title li:nth-child(7) img{
+    margin-left: 58px;
+    margin-top: 10px;
+    width: 140px;
+    height: 140px;
+}
+/* 下载变暗 */
+.title li:nth-child(7) .download:hover{
+    filter: brightness(.75);
+}
+
+.title li:nth-child(7) .packup{
+    position: absolute;
+    top: 5px;
+    left: -42px;
+    width: 24px;
+    height: 24px;
+    /* 鼠标样式 */
+    cursor:pointer;
+}
+
+/* 收起 */
+.title li:nth-child(7) span{
+    /* 块级元素 */
+    display: block;
+    position: absolute;
+    top: 35px;
+    left: 17px;
+    width: 0;
+    font-size: 20px;
+    color: white;
+    cursor:pointer;
+}
+
+/* 扫码线 */
+.title li:nth-child(7) img:nth-of-type(4){
+    transform: translateY(-475px);
+    height: 10px;
+    /* 动画 */
+    animation: sweep 1s linear infinite alternate;
+}
+@keyframes sweep{
+    100%{
+        transform: translateY(-340px);
+    }
+}
+
+.new{
+    position: absolute;
+    top: 1100px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 1200px;
+    /* 图层层级 */
+    z-index: -2;
+}
+
+.new li{
+    width: 300px;
+    transition-duration: .5s;
+}
+
+.new li:nth-child(1){
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 380px;
+    height: 63px;
+}
+
+.new li:nth-child(2){
+    position: absolute;
+    top: 48px;
+    left: 40px;
+    cursor:pointer;
+}
+
+.new li:nth-child(3){
+    position: absolute;
+    top: 97px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor:pointer;
+}
+
+.new li:nth-child(4){
+    position: absolute;
+    top: 48px;
+    right: 40px;
+    cursor:pointer;
+}
+
+.new li:nth-child(5){
+    position: absolute;
+    top: 513px;
+    left: -30px;
+    cursor:pointer;
+}
+
+.new li:nth-child(6){
+    position: absolute;
+    top: 448px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor:pointer;
+}
+
+.new li:nth-child(7){
+    position: absolute;
+    top: 472px;
+    right: 40px;
+    cursor:pointer;
+}
+
+/* 相邻兄弟选择器 */
+.new li + li:hover{
+    transform: translateY(-20px);
+}
+
+.characteristic{
+    position: absolute;
+    top: 2100px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 800px;
+    /* https://www.w3school.com.cn/cssref/pr_transform-style.asp */
+    transform-style: preserve-3d;
+    /* 设置元素被查看位置的视图 */
+    perspective: 1000px;
+    perspective-origin: center;
+    width: 1200px;
+    z-index: -2;
+}
+/* 游戏特色 */
+.characteristic li:nth-child(1){
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 329px;
+    height: 63px;
+}
+/* 中间图 */
+.characteristic li:nth-child(2){
+    position: absolute;
+    top: 110px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 811px;
+    border: 3px solid gold;
+}
+/* 阴影 */
+/* https://www.php.cn/css-tutorial-412795.html */
+.characteristic .mask::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: rgba(0, 0, 0, .5);
+}
+
+.characteristic li:nth-child(3){
+    width: 810px;
+    border: 3px solid gold;
+    transform-origin: left;
+    transform:translate3d(30px,80px,-150px) rotateY(30deg);
+}
+.characteristic li:nth-child(4){
+    width: 810px;
+    border: 3px solid gold;
+    transform-origin: 800px;
+    transform:translate3d(350px,-537px,-150px) rotateY(-30deg);
+}
+/* 箭头 */
+.characteristic li:nth-child(5){
+    position: absolute;
+    top: 384px;
+    left: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+.characteristic li:nth-child(6){
+    position: absolute;
+    top: 384px;
+    right: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.bottom{
+    position: absolute;
+    top: 2940px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 865px;
+    height: 200px;
+}
+.bottom li{
+    display: inline-block;
+}
+.bottom a,span{
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+}
+/* 点击查看家长监护工程 */
+.bottom a:nth-of-type(9){
+    position: absolute;
+    right: 47px;
+    line-height: 28px;
+    background-color: brown;
+}
+.bottom img{
+    margin-right: 5px;
+}
+.bottom img:hover{
+    cursor: pointer;
+}
+.bottom a:hover{
+    text-decoration: underline;
+}
+.bottom .iconfont{
+    margin-right: 20px;
+    vertical-align: middle;
+    font-size: 25px;
+    color: rgb(206, 177, 104);
+}
+.share{
+    position: absolute;
+    top: -40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 450px;
+}
+.bottom .share span{
+    vertical-align: middle;
+    color: rgb(206, 177, 104);
+}
+.bottom .share i:hover{
+    color: red;
+    cursor: pointer;
+}
+.bottom .share i:hover span{
+    color: red;
+}
+.bottom li:nth-of-type(7){
+    margin-top: 20px;
+}
